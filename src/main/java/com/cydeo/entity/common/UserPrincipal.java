@@ -29,7 +29,6 @@ public class UserPrincipal implements UserDetails {
         List<GrantedAuthority> authorityList = new ArrayList<>();
 
         GrantedAuthority authority = new SimpleGrantedAuthority(this.user.getRole().getDescription());
-//        GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_ADMIN");
 
         authorityList.add(authority);
 
@@ -65,4 +64,9 @@ public class UserPrincipal implements UserDetails {
     public boolean isEnabled() {
         return this.user.isEnabled();
     }
+
+    public Long getId(){
+        return this.user.getId();
+    }
+
 }
