@@ -34,7 +34,7 @@ jobs:
           command: aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 403851694326.dkr.ecr.us-east-2.amazonaws.com && docker build -t ticketingapp /tmp/workspace && docker tag ticketingapp:latest 403851694326.dkr.ecr.us-east-2.amazonaws.com/ticketingapp:latest && docker push 403851694326.dkr.ecr.us-east-2.amazonaws.com/ticketingapp:latest
   deploy-job:
     docker:
-      #specify the version you desire here
+      #specify the version you desire  here
       - image: circleci/node:10.0.0
     steps:
       - run:
